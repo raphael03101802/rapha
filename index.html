@@ -3,45 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Letreiro Motivacional</title>
+<title>Letreiro Militar Motivacional</title>
 
 <style>
-  /* Define o espaço total da tela */
+  /* ===== Estilo geral da página ===== */
   body {
-    background-color: #f0f0f0;
+    /* Fundo com padrão camuflado militar */
+    background: linear-gradient(45deg, #3a4d3f, #4f5e46, #6b715a);
+    background-size: 200% 200%;
+    animation: movimentoFundo 10s infinite alternate;
+    
     height: 100vh;
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center;     /* Centraliza verticalmente */
     margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
   }
 
-  /* Área do letreiro */
+  /* Animação do fundo camuflado */
+  @keyframes movimentoFundo {
+    0% { background-position: left top; }
+    100% { background-position: right bottom; }
+  }
+
+  /* ===== Área do letreiro ===== */
   .letreiro-container {
-    width: 600px;      /* Largura da tela do letreiro */
-    height: 100px;     /* Altura do letreiro */
-    border: 3px solid #333;
-    background-color: #fff;
+    width: 700px;       /* Largura da tela do letreiro */
+    height: 120px;      /* Altura do letreiro */
+    border: 4px solid #2b2b2b;
+    background: linear-gradient(to right, #1c1c1c, #2e2e2e);
     overflow: hidden;
     position: relative;
-    padding: 20px;     /* Espaço livre em torno do texto */
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    padding: 20px;      /* Espaço livre em torno do texto */
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
   }
 
-  /* Texto do letreiro */
+  /* ===== Texto do letreiro ===== */
   .texto {
     position: absolute;
-    white-space: nowrap; /* Impede quebra de linha */
-    font-size: 24px;
+    white-space: nowrap;
+    font-size: 26px;
     font-weight: bold;
-    color: #0077cc;
+    color: #d4af37; /* Dourado militar */
+    text-shadow: 2px 2px 4px #000;
+    letter-spacing: 2px;
   }
 </style>
 </head>
 <body>
 
   <div class="letreiro-container">
-    <div class="texto">A vitória pertence àqueles que persistem quando todos os outros desistem. A força não vem do corpo, mas da vontade de nunca se render! CAVERAA </div>
+    <div class="texto">🪖 "Disciplina, coragem e honra: o orgulho da Infantaria Brasileira!" 🇧🇷</div>
   </div>
 
   <script>
@@ -50,7 +64,7 @@
 
     let posX = 0;  // Posição inicial (esquerda)
     let direcao = 1; // 1 = direita, -1 = esquerda
-    const velocidade = 2; // pixels por frame
+    const velocidade = 2.5; // pixels por frame (pode ajustar)
 
     function animar() {
       posX += direcao * velocidade;
@@ -71,3 +85,4 @@
 
 </body>
 </html>
+

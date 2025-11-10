@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Letreiro Motivacional</title>
+
+<style>
+  /* Define o espaço total da tela */
+  body {
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    margin: 0;
+  }
+
+  /* Área do letreiro */
+  .letreiro-container {
+    width: 600px;      /* Largura da tela do letreiro */
+    height: 100px;     /* Altura do letreiro */
+    border: 3px solid #333;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;     /* Espaço livre em torno do texto */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+
+  /* Texto do letreiro */
+  .texto {
+    position: absolute;
+    white-space: nowrap; /* Impede quebra de linha */
+    font-size: 24px;
+    font-weight: bold;
+    color: #0077cc;
+  }
+</style>
+</head>
+<body>
+
+  <div class="letreiro-container">
+    <div class="texto">🌟 Acredite em si mesmo e tudo será possível! 🌟</div>
+  </div>
+
+  <script>
+    const texto = document.querySelector('.texto');
+    const container = document.querySelector('.letreiro-container');
+
+    let posX = 0;  // Posição inicial (esquerda)
+    let direcao = 1; // 1 = direita, -1 = esquerda
+    const velocidade = 2; // pixels por frame
+
+    function animar() {
+      posX += direcao * velocidade;
+      texto.style.left = posX + 'px';
+
+      const limiteDireito = container.offsetWidth - texto.offsetWidth;
+
+      // Inverte direção ao atingir bordas
+      if (posX >= limiteDireito || posX <= 0) {
+        direcao *= -1;
+      }
+
+      requestAnimationFrame(animar);
+    }
+
+    animar();
+  </script>
+
+</body>
+</html>

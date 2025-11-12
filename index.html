@@ -58,31 +58,7 @@
     <div class="texto">🪖 "Disciplina, coragem e honra: o orgulho da Infantaria Brasileira!" 🇧🇷</div>
   </div>
 
-  <script>
-    const texto = document.querySelector('.texto');
-    const container = document.querySelector('.letreiro-container');
-
-    let posX = 0;  // Posição inicial (esquerda)
-    let direcao = 1; // 1 = direita, -1 = esquerda
-    const velocidade = 2.5; // pixels por frame (pode ajustar)
-
-    function animar() {
-      posX += direcao * velocidade;
-      texto.style.left = posX + 'px';
-
-      const limiteDireito = container.offsetWidth - texto.offsetWidth;
-
-      // Inverte direção ao atingir bordas
-      if (posX >= limiteDireito || posX <= 0) {
-        direcao *= -1;
-      }
-
-      requestAnimationFrame(animar);
-    }
-
-    animar();
-  </script>
-
+  
 </body>
 </html>
 
